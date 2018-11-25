@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PersonInfo.Models;
+using Person.Api.Models;
 
-namespace PersonInfo.Migrations
+namespace Person.Api.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace PersonInfo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PersonInfo.Models.Person", b =>
+            modelBuilder.Entity("Person.Api.Models.APerson", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

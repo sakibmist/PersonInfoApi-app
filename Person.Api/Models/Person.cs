@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace PersonInfo.Models
+namespace Person.Api.Models
 {
-    public class Person
+    public class APerson
     {
         [Key]
         public int Id { get; set; }
@@ -13,7 +13,6 @@ namespace PersonInfo.Models
         public string Name { get; set; }
 
         [Required]
-        [StringLength(50)]
         public int Age { get; set; }
 
         [Required]

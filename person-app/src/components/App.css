@@ -4,3 +4,6 @@
 .design{
   margin-top: -33px;
 }
+.minHeight{
+  min-height: 400px;
+}

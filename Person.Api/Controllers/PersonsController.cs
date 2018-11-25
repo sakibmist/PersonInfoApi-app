@@ -1,14 +1,13 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using PersonInfo.Models;
+using Person.Api.Models;
 
-namespace PersonInfo.Controllers
+namespace Person.Api.Controllers
 {
-    [Route("api/person")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PersonsController : ControllerBase
     {
-
         private readonly DataContext _dataContext;
         public PersonsController(DataContext dataContext)
         {
@@ -46,9 +45,8 @@ namespace PersonInfo.Controllers
             }
         }
 
-        // POST api/values
         [HttpPost]
-        public IActionResult PostPersonData(Person person)
+        public IActionResult AddPerson(APerson person)
         {
             try
             {
@@ -65,7 +63,7 @@ namespace PersonInfo.Controllers
 
         // PUT api/person
         [HttpPut("{id}")]
-        public IActionResult PutForUpdate(int id, Person person)
+        public IActionResult PutForUpdate(int id, APerson person)
         {
             try
             {

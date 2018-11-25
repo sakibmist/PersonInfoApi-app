@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace PersonInfo.Models
+namespace Person.Api.Models
 {
     public class DataContext : DbContext
     {
@@ -8,7 +8,7 @@ namespace PersonInfo.Models
         {
 
         }
-        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<APerson> Persons { get; set; }
 
     }
 }
