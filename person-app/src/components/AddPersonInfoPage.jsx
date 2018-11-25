@@ -6,14 +6,13 @@ import http from 'axios';
 
 class AddPersonInfoPage extends React.Component {
 
-
   state = {
     name: '',
     age: '',
     address: '',
-    listofPersons:[]
-
   };
+
+  baseUrl = "http://localhost:5000/api/person";
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -22,23 +21,13 @@ class AddPersonInfoPage extends React.Component {
     });
     //console.log(this.state);
   };
-  baseUrl = "http://localhost:5000/api/person";
 
   handleSubmit = async () => {
-    const {name, age, address,listofPersons}=this.state;
-    const response = await http.post(this.baseUrl,{name:name,age:age,address:address});
-    //console.log(response.status);
+    const {name, age, address}=this.state;
+    const response = await http.post(this.baseUrl,{name,age,address});
     if(response.status === 201){
-      const person = response.data;
-      this.setState(prevstate=>({
-        listofPersons:[person, ...prevstate.listofPersons],
-        name:"",
-        age:"", 
-        address:""
-
-      })); 
+      this.props.history.push('/peoples');
     }
-    console.log(this.state);
   };
 
 

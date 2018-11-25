@@ -4,6 +4,7 @@ import { Route, NavLink } from 'react-router-dom';
 import "./App.css";
 import AddPersonInfoPage from './AddPersonInfoPage';
 import DetailsPage from "./DetailsPage";
+import PersonIndexPage from "./PersonIndexPage";
 
  
 
@@ -75,6 +76,7 @@ class App extends Component {
             </nav>
             <div className="minHeight">
             <Route path="/add-person" component={AddPersonInfoPage} />
+            <Route path="/peoples" component={PersonIndexPage} />  
             <Route path="/details" component={DetailsPage} />  
             </div>
            
