@@ -4,7 +4,7 @@ using Person.Api.Models;
 
 namespace Person.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/person")]
     [ApiController]
     public class PersonsController : ControllerBase
     {
@@ -30,7 +30,7 @@ namespace Person.Api.Controllers
             }
         }
 
-        // GET api/person
+        // GET api/persond
         [HttpGet("{id}", Name = "GetPerson")]
         public IActionResult GetPerson(int id)
         {

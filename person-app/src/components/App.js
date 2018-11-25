@@ -5,6 +5,7 @@ import "./App.css";
 import AddPersonInfoPage from './AddPersonInfoPage';
 import DetailsPage from "./DetailsPage";
 import PersonIndexPage from "./PersonIndexPage";
+import EditPersonPage from "./EditPersonPage";
 
  
 
@@ -19,7 +20,7 @@ class App extends Component {
               <h1 className="text-center"> Simple Header </h1>
             </div>
             <nav className="navbar navbar-expand-lg navbar-blue">
-              <NavLink className="nav-link" to="/details">Brand</NavLink>
+              <NavLink className="nav-link" to="/app">Brand</NavLink>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -61,15 +62,11 @@ class App extends Component {
                         Another action
                   </a>
                       <div className="dropdown-divider" />
-                      <a className="dropdown-item" href="sd">
-                        Something else here
-                  </a>
+                       
                     </div>
                   </li>
                   <li className="nav-item navSpace">
-                    <a className="nav-link disabled" href="df">
-                      Disabled
-                </a>
+                  <NavLink to="/peoples" className="nav-link">Show-All</NavLink>
                   </li>
                 </ul>
               </div>
@@ -78,6 +75,7 @@ class App extends Component {
             <Route path="/add-person" component={AddPersonInfoPage} />
             <Route path="/peoples" component={PersonIndexPage} />  
             <Route path="/details" component={DetailsPage} />  
+            <Route path="/person/edit/:id" component={EditPersonPage} />  
             </div>
            
             <div className="card-footer border">

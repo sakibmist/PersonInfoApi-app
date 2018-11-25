@@ -4,12 +4,13 @@ import http from 'axios';
 
 
 
+
 class AddPersonInfoPage extends React.Component {
 
   state = {
     name: '',
     age: '',
-    address: '',
+    address: '' 
   };
 
   baseUrl = "http://localhost:5000/api/person";
@@ -22,22 +23,28 @@ class AddPersonInfoPage extends React.Component {
     //console.log(this.state);
   };
 
-  handleSubmit = async () => {
+  handleSubmit = async (event) => {
+    event.preventDefault();
     const {name, age, address}=this.state;
     const response = await http.post(this.baseUrl,{name,age,address});
     if(response.status === 201){
+
       this.props.history.push('/peoples');
+       
     }
+     
   };
 
 
 
 
   render() {
+    const {msg}=this.state;
 
     return (
       <div className="card-body border">
         <div className="offset-2 col-sm-8">
+        {msg}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group row">
               <label htmlFor="name" className="col-sm-2 col-form-label">
