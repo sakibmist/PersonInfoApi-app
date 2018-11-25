@@ -10,7 +10,7 @@ using Person.Api.Models;
 namespace Person.Api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181125070601_Init")]
+    [Migration("20181125170408_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,8 +31,7 @@ namespace Person.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<int>("Age")
-                        .HasMaxLength(50);
+                    b.Property<int>("Age");
 
                     b.Property<DateTime>("CreatedAt");
 

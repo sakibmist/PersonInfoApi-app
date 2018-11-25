@@ -21,7 +21,7 @@ class PersonIndexPage extends React.Component {
     }
 
     handleDelete= async(id)=>{
-        
+        if(window.confirm('Are you sure to delete!')){
         const response =await http.delete(`${this.baseUrl}/${id}`);
         if(response.status === 200){
             const {peoples}= this.state;
@@ -32,6 +32,7 @@ class PersonIndexPage extends React.Component {
             }
             
         }
+    }
     }
 
     render() {
@@ -56,8 +57,7 @@ class PersonIndexPage extends React.Component {
                                 <td>
                                     <NavLink to={`/person/edit/${people.id}`} className="btn btn-sm btn-warning ml-2">Edit</NavLink>
                                     <button className="btn btn-sm btn-danger ml-2" onClick={()=>this.handleDelete(people.id)}>Delete</button>
-                                    <NavLink to="" className="btn btn-sm btn-info">Details</NavLink>
-                                    <button className="btn btn-sm ml-2">Details</button>
+                                    <NavLink to={`/person/detail/${people.id}`} className="btn btn-sm btn-info ml-2">Details</NavLink> 
                                 </td>
                             </tr>
                         ))}

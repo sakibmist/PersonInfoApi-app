@@ -29,8 +29,7 @@ namespace Person.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<int>("Age")
-                        .HasMaxLength(50);
+                    b.Property<int>("Age");
 
                     b.Property<DateTime>("CreatedAt");
 

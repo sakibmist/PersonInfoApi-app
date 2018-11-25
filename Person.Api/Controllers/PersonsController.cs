@@ -70,6 +70,9 @@ namespace Person.Api.Controllers
                 if (id != person.Id) return BadRequest("Invalid Data");
                 var findData = _dataContext.Persons.FirstOrDefault(x => x.Id == id);
                 if (findData == null) return NotFound("No Data "); //
+                findData.Name = person.Name;
+                findData.Age = person.Age;
+                findData.Address = person.Address;
                 _dataContext.Persons.Update(findData);
                 _dataContext.SaveChanges();
                 return NoContent(); //204
