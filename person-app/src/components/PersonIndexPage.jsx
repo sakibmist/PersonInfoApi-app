@@ -20,6 +20,20 @@ class PersonIndexPage extends React.Component {
         }
     }
 
+    handleDelete= async(id)=>{
+        
+        const response =await http.delete(`${this.baseUrl}/${id}`);
+        if(response.status === 200){
+            const {peoples}= this.state;
+            const index =peoples.findIndex(people=>people.id === id);
+            if(index>-1){
+                peoples.splice(index,1);
+                this.setState({peoples});
+            }
+            
+        }
+    }
+
     render() {
         const { peoples } = this.state;
         return (
@@ -41,7 +55,8 @@ class PersonIndexPage extends React.Component {
                                 <td>{people.address}</td>
                                 <td>
                                     <NavLink to={`/person/edit/${people.id}`} className="btn btn-sm btn-warning ml-2">Edit</NavLink>
-                                    <button className="btn btn-sm btn-danger ml-2">Delete</button>
+                                    <button className="btn btn-sm btn-danger ml-2" onClick={()=>this.handleDelete(people.id)}>Delete</button>
+                                    <NavLink to="" className="btn btn-sm btn-info">Details</NavLink>
                                     <button className="btn btn-sm ml-2">Details</button>
                                 </td>
                             </tr>

@@ -6,6 +6,7 @@ import AddPersonInfoPage from './AddPersonInfoPage';
 import DetailsPage from "./DetailsPage";
 import PersonIndexPage from "./PersonIndexPage";
 import EditPersonPage from "./EditPersonPage";
+ 
 
  
 
@@ -73,9 +74,9 @@ class App extends Component {
             </nav>
             <div className="minHeight">
             <Route path="/add-person" component={AddPersonInfoPage} />
-            <Route path="/peoples" component={PersonIndexPage} />  
-            <Route path="/details" component={DetailsPage} />  
+            <Route path="/peoples" component={PersonIndexPage} />   
             <Route path="/person/edit/:id" component={EditPersonPage} />  
+            <Route path="/person/detail/:id" component={DetailsPage}/>
             </div>
            
             <div className="card-footer border">

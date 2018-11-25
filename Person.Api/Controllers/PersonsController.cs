@@ -92,7 +92,7 @@ namespace Person.Api.Controllers
                 if (findData == null) return null;
                 _dataContext.Persons.Remove(findData);
                 _dataContext.SaveChanges();
-                return Ok();
+                return Ok(); //200
             }
             catch (System.Exception)
             {

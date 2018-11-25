@@ -29,22 +29,19 @@ class AddPersonInfoPage extends React.Component {
     const response = await http.post(this.baseUrl,{name,age,address});
     if(response.status === 201){
 
-      this.props.history.push('/peoples');
+      this.props.history.push('/peoples'); //redirect to another page
        
     }
      
-  };
+  }; 
 
 
 
 
   render() {
-    const {msg}=this.state;
-
     return (
       <div className="card-body border">
         <div className="offset-2 col-sm-8">
-        {msg}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group row">
               <label htmlFor="name" className="col-sm-2 col-form-label">
